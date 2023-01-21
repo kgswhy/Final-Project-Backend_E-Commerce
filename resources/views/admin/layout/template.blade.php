@@ -1,18 +1,3 @@
-<!--
-
-=========================================================
-* Argon Dashboard 2 Tailwind - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-tailwind
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('dashboard/assets/img/apple-icon.png') }}" />
     <link rel="icon" type="image/png" href="{{ asset('dashboard/assets/img/favicon.png') }}" />
-    <title>Argon Dashboard 2 Tailwind by Creative Tim</title>
+    <title>E-Fruit</title>
 
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -44,7 +29,7 @@
         <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank">
           <img src="{{ asset('dashboard/assets/img/logo-ct-dark.png') }}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
           <img src="{{ asset('dashboard/assets/img/logo-ct.png') }}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
-          <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">E-Fruit</span>
+          <span class="ml-2 font-semibold transition-all duration-200 ease-nav-brand">E - Fruit</span>
         </a>
       </div>
 
@@ -64,9 +49,9 @@
           <li class="mt-0.5 w-full">
             <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/tables.html">
               <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
+                <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-list-grid-58"></i>
               </div>
-              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Tables</span>
+              <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Category</span>
             </a>
           </li>
 
@@ -767,6 +752,7 @@
         </div>
       </div>
     </div>
+
     @yield('content')
   </body>
   <!-- plugin for charts  -->
