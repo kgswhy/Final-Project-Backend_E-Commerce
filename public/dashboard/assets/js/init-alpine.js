@@ -43,9 +43,33 @@ function data() {
     closeProfileMenu() {
       this.isProfileMenuOpen = false
     },
+
+    // Section PC
     isPagesMenuOpen: false,
     togglePagesMenu() {
       this.isPagesMenuOpen = !this.isPagesMenuOpen
+    },
+    isPagesMenuOpen2PC: false,
+    togglePagesMenu2PC() {
+      this.isPagesMenuOpen2PC = !this.isPagesMenuOpen2PC
+    },
+    isPagesMenuOpen3PC: false,
+    togglePagesMenu3PC() {
+      this.isPagesMenuOpen3PC = !this.isPagesMenuOpen3PC
+    },
+    isPagesMenuOpen4PC: false,
+    togglePagesMenu4PC() {
+      this.isPagesMenuOpen4PC = !this.isPagesMenuOpen4PC
+    },
+
+    // Section mobile
+    isPagesMenuOpen1: false,
+    togglePagesMenu1() {
+      this.isPagesMenuOpen1 = !this.isPagesMenuOpen1
+    },
+    isPagesMenuOpen2: false,
+    togglePagesMenu2() {
+      this.isPagesMenuOpen2 = !this.isPagesMenuOpen2
     },
     // Modal
     isModalOpen: false,
