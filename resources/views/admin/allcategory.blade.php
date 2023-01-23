@@ -54,7 +54,7 @@ Available Category Information
     </thead>
     @php
       $i = 1
-    @endphp
+      @endphp
     <tbody
       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
     >
@@ -67,7 +67,7 @@ Available Category Information
 
             </div>
             <div>
-              <p class="font-semibold">{{$category->id}}</p>
+              <p class="font-semibold">{{$category->$i++}}</p>
             </div>
           </div>
         </td>
@@ -136,4 +136,5 @@ Available Category Information
   </span>
 </div>
 </div>
+
 @endsection

@@ -38,7 +38,7 @@ Add Product - E - Gerai
                   <span class="text-gray-700 dark:text-gray-400">Product Name</span>
                   <input
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="Electronics" id="subcategory_name" name="subcategory_name"
+                    placeholder="Electronics" id="product_name" name="product_name"
                   />
                 </label>
 
@@ -46,7 +46,7 @@ Add Product - E - Gerai
                   <span class="text-gray-700 dark:text-gray-400">Product Price</span>
                   <input type="number"
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="12" id="subcategory_name" name="subcategory_name"
+                    placeholder="12" id="price" name="price"
                   />
                 </label>
   

@@ -52,7 +52,7 @@ route::middleware(['auth','role:admin'])->group(function(){
         route::get('/admin/add-subcategory','Addsubcategory')->name('addsubcategory');
         route::post('/admin/store-subcategory','StoreSubCategory')->name('storesubcategory');
         route::get('/admin/edit-subcategory/{id}','EditSubCat')->name('editsubcat');
-        route::get('/admin/delete-subcategory/{id}','DeleteSubCat')->name('deletesubcat');
+        route::get('/admin/delete-subcategory/{id}/{cat_id}','DeleteSubCat')->name('deletesubcat');
         route::post('/admin/update-subcate','UpdateSubCat')->name('updatesubcat');
     });
 
