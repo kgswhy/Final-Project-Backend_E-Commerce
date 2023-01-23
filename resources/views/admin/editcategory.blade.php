@@ -1,6 +1,6 @@
 @extends('admin.layout.template')
 @section('page-title')
-Add Category - E - Gerai
+Edit Category - E - Gerai
 @endsection
 @section('content')
 <nav class="flex bg-gray-50 text-gray-700 border border-gray-200 py-3 px-5 rounded-lg dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
@@ -20,7 +20,7 @@ Add Category - E - Gerai
       <li>
         <div class="flex items-center">
           <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-          <a href="{{ route('addcategory') }}" class="text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">Add Category</a>
+          <a href="{{ route('addcategory') }}" class="text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">Edit Category</a>
         </div>
       </li>
     
@@ -30,7 +30,7 @@ Add Category - E - Gerai
     <h4
     class="mb-3 text-lg font-semibold text-gray-600 dark:text-gray-300"
   >
-    Add New Category
+    Edit Category
   </h4>
   @if ($errors->any())
     <div class="alert alert-danger">
@@ -41,18 +41,18 @@ Add Category - E - Gerai
         </ul>
     </div>
 @endif
-  <form action="{{ route('storesubcategory')}}" method="post">
+  <form action="{{ route('updatecategory')}}" method="post">
     @csrf
+    <input type="hidden" value="{{ $category_info->id }}" name="category_id">
     <label class="block mt-4 text-sm">
         <div class="relative text-gray-500 focus-within:text-purple-600">
           <input
             class="block w-full pr-20 mt-1 text-sm text-white dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
-            placeholder="Category Name" id="category_name" name="category_name"
+            value="{{ $category_info->category_name }}" id="category_name" name="category_name"
           />
           <button
-            class="absolute inset-y-0 right-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-r-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-          >
-            Add Category
+            class="absolute inset-y-0 right-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-r-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+            Update Category
           </button>
         </div>
       </label>

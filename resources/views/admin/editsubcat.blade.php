@@ -1,6 +1,6 @@
 @extends('admin.layout.template')
 @section('page-title')
-Add Sub Category - E - Fruit
+Edit Sub Category - E - Fruit
 @endsection
 @section('content')
 <nav class="flex bg-gray-50 text-gray-700 border border-gray-200 py-3 px-5 rounded-lg dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
@@ -20,7 +20,7 @@ Add Sub Category - E - Fruit
     <li>
       <div class="flex items-center">
         <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        <a href="{{ route('addsubcategory') }}" class="text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">Add Sub Category</a>
+        <a href="{{ route('addsubcategory') }}" class="text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">Edit Sub Category</a>
       </div>
     </li>
   
@@ -30,10 +30,11 @@ Add Sub Category - E - Fruit
 <h4
               class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
             >
-             Add Sub Category
+             Edit Sub Category
             </h4>
-           <form action="{{route('storesubcategory')}}" method="post">
+           <form action="{{route('updatesubcat')}}" method="post">
             @csrf
+            <input type="hidden" name="subcatid" id="subcatid" value="{{$subcatinfo->id}}">
             <div
             class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
           >
@@ -41,27 +42,13 @@ Add Sub Category - E - Fruit
               <span class="text-gray-700 dark:text-gray-400">Sub Category Name</span>
               <input
                 class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                placeholder="Electronics" id="subcategory_name" name="subcategory_name"
+                value="{{$subcatinfo->subcategory_name}}" id="subcategory_name" name="subcategory_name"
               />
-            </label>
-
-
-            <label class="block mt-4 text-sm">
-              <span class="text-gray-700 dark:text-gray-400">
-                Open The Select Menu
-              </span>
-              <select
-                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" id="category_id" name="category_id">
-                <option selected>Open the select menu</option>
-                @foreach ($categories as $category) 
-                <option value="{{$category->id}}">{{$category->category_name}}</option>
-                @endforeach
-              </select>
             </label>
             <br>
             <div>
               <button type="submit" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple fl">
-                Add Sub Category
+                Update Sub Category
               </button>
             </div>
 

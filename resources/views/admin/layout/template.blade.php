@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blank - Windmill Dashboard</title>
+    <title>@yield('page-title')</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -29,7 +29,7 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
           >
-            E - Fruit
+            E - Gerai
           </a>
           <ul class="mt-6">
             <li class="relative px-6 py-3">
@@ -346,7 +346,7 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
           >
-            E - Fruit
+            E - Gerai
           </a>
           <ul class="mt-6">
             <li class="relative px-6 py-3">
@@ -432,12 +432,12 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="{{ route('addsubcategory') }}">Add Category</a>
+                    <a class="w-full" href="{{ route('addcategory') }}">Add Category</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="{{ route('allsubcategory') }}">
+                    <a class="w-full" href="{{ route('allcategory') }}">
                       All Category
                     </a>
                   </li>
