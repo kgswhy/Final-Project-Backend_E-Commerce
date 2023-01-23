@@ -52,6 +52,9 @@ Available Sub Category Information
         <th class="px-4 py-3">Actions</th>
       </tr>
     </thead>
+    @php
+      $i = 1
+    @endphp
     <tbody
       class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
     >
@@ -64,7 +67,7 @@ Available Sub Category Information
           
             </div>
             <div>
-              <p class="font-semibold">{{$subcategory->id}}</p>
+              <p class="font-semibold">{{$i++}}</p>
             </div>
           </div>
         </td>

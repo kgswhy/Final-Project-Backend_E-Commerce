@@ -26,12 +26,15 @@ Add Product - E - Gerai
     
     </ol>
   </nav>
+  @include('sweetalert::alert')
   <h4
                 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
               >
                 Add New Product
               </h4>
-              <div
+              <form action="{{route('storeproduct')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div
                 class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
               >
                 <label class="block text-sm">
@@ -54,7 +57,7 @@ Add Product - E - Gerai
                   <span class="text-gray-700 dark:text-gray-400">Product Quantity</span>
                   <input type="number"
                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="1000" id="subcategory_name" name="subcategory_name"
+                    placeholder="1000" id="quantity" name="quantity"
                   />
                 </label>
 
@@ -62,13 +65,13 @@ Add Product - E - Gerai
                     <span class="text-gray-700 dark:text-gray-400">Product Short Description</span>
                     <input
                       class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                      placeholder="Electronics" id="subcategory_name" name="subcategory_name"
+                      placeholder="Electronics" id="product_short_des" name="product_short_des"
                     />
                   </label>
 
                   <label class="block text-sm">
                     <span class="text-gray-700 dark:text-gray-400">Product Long Description</span>
-                    <textarea class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" name="product_long_des" id="product_long_des" cols="30" rows="10"></textarea>
                   </label>
 
                   
@@ -77,11 +80,11 @@ Add Product - E - Gerai
                       Select Category
                     </span>
                     <select
-                      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" id="category" name="category">
-                      <option active>Open the select menu</option>
-                      <option>One</option>
-                      <option>Two</option>
-                      <option>Three</option>
+                      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" id="product_category_id" name="product_category_id">
+                      <option selected>Select Product Category</option>
+                      @foreach ($categories as $category)
+                      <option value="{{$category->id}}">{{$category->category_name}}</option>
+                      @endforeach
                     </select>
                   </label>
 
@@ -91,11 +94,11 @@ Add Product - E - Gerai
                       Select Sub Category
                     </span>
                     <select
-                      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" id="category" name="category">
-                      <option active>Open the select menu</option>
-                      <option>One</option>
-                      <option>Two</option>
-                      <option>Three</option>
+                      class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" id="product_subcategory_id" name="product_subcategory_id">
+                      <option active>Select Product Sub Category</option>
+                      @foreach ($subcategories as $subcategory)
+                      <option value="{{$subcategory->id}}">{{$subcategory->subcategory_name}}</option>                      
+                      @endforeach
                     </select>
                   </label>
                   
@@ -103,7 +106,7 @@ Add Product - E - Gerai
                         <span class="text-gray-700 dark:text-gray-400">
                             Upload Product Image
                         </span>
-                    <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" id="file_input" type="file">
+                    <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" id="product_img" name="product_img" type="file">
                 </label>
 
   
@@ -116,5 +119,6 @@ Add Product - E - Gerai
                   </button>
                 </div>
   
+              </form>
   
 @endsection
